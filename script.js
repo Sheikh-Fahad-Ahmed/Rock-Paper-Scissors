@@ -9,7 +9,7 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice(choice) {
-    
+function getHumanChoice() {
+    userChoice = prompt("What do you like to choose(Rock, Paper or Scissors): ");
+    return userChoice;
 }
-
