@@ -47,13 +47,28 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function PlayGame() {
+    for (let i = 1; i <= 5; i++) {
+        console.log(`Round ${i}: `);
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+    if (humanScore > computerScore) {
+        console.log(`You Win The Game!!!
+your score: ${humanScore}
+computer score: ${computerScore}
+Thank You For Playing!`)
+    } else {
+        console.log(`You Lose! Better Luck Next Time!
+your score: ${humanScore}
+computer score: ${computerScore}
+Thank You For Playing!`);
+    }
+
+}
+
 let humanScore = 0;
 let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-console.log(`your score : ${humanScore}
-Computer Score : ${computerScore}`);
+PlayGame()
