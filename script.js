@@ -13,3 +13,6 @@ function getHumanChoice() {
     userChoice = prompt("What do you like to choose(Rock, Paper or Scissors): ");
     return userChoice;
 }
+
+let humanScore = 0;
+let computerScore =0 ;
