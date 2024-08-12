@@ -71,4 +71,22 @@ function playRound(humanChoice, computerChoice) {
 let humanScore = 0;
 let computerScore = 0;
 
-PlayGame()
+
+let btn = document.querySelector("#buttons");
+
+btn.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch (target.id) {
+        case 'rock':
+            console.log("Rock");
+            break;
+        case 'paper':
+            console.log('Paper');
+            break;
+        case 'scissor':
+            console.log('Scissor');
+            break;
+    }
+});
+
