@@ -9,10 +9,10 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    userChoice = prompt("What do you like to choose(Rock, Paper or Scissors): ");
-    return userChoice;
-}
+// function getHumanChoice() {
+//     userChoice = prompt("What do you like to choose(Rock, Paper or Scissors): ");
+//     return userChoice;
+// }
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
@@ -74,19 +74,37 @@ let computerScore = 0;
 
 let btn = document.querySelector("#buttons");
 
-btn.addEventListener('click', (event) => {
-    let target = event.target;
+function getHumanChoice() {
+    let computerChoice = getComputerChoice();
+    let result;
 
-    switch (target.id) {
-        case 'rock':
-            console.log("Rock");
-            break;
-        case 'paper':
-            console.log('Paper');
-            break;
-        case 'scissor':
-            console.log('Scissor');
-            break;
+    btn.addEventListener('click', (event) => {
+        let target = event.target;
+
+        switch (target.id) {
+            case 'rock':
+                result = playRound('rock', computerChoice);
+                break;
+            case 'paper':
+                result = playRound('paper', computerChoice);
+                break;
+            case 'scissors':
+                result = playRound('scissors', computerChoice);
+                break;
+        }
+    });
+}
+
+function getScore(result){
+    if (result == 'Win') {
+        humanScore += 1;
+    } else {
+        computerScore += 1;
     }
-});
+    return humanScore,computerScore
+}
+
+function showScore(humanScore,computerScore){
+    
+}
 
