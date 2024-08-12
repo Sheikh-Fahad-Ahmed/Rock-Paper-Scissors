@@ -19,30 +19,30 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice == 'rock') {
         if (computerChoice == 'paper') {
             console.log("You lose! Paper beats Rock.");
-            computerScore += 1;
+            getScore('lose');
         } else if (computerChoice == 'scissors') {
             console.log("You Win! Rock beats Scissors.");
-            humanScore += 1;
+            getScore('win');
         } else {
             console.log("Its a Draw!");
         }
     } else if (humanChoice == 'paper') {
         if (computerChoice == 'rock') {
             console.log("You Win! Paper Beats Rock.");
-            humanScore += 1;
+            getScore('win');
         } else if (computerChoice == 'scissors') {
             console.log("You Lose! Scissors beat Paper.");
-            computerScore += 1;
+            getScore('lose');
         } else {
             console.log("Its a Draw!");
         }
     } else {
         if (computerChoice == 'rock') {
             console.log("You Lose! Rock beats scissors");
-            computerScore += 1;
+            getScore('lose');
         } else if (computerChoice == 'paper') {
             console.log("You win! Scissors beat Paper");
-            humanScore += 1;
+            getScore('win');
         }
     }
 }
@@ -74,37 +74,48 @@ let computerScore = 0;
 
 let btn = document.querySelector("#buttons");
 
-function getHumanChoice() {
+
+
+btn.addEventListener('click', (event) => {
+    let target = event.target;
     let computerChoice = getComputerChoice();
-    let result;
 
-    btn.addEventListener('click', (event) => {
-        let target = event.target;
-
-        switch (target.id) {
-            case 'rock':
-                result = playRound('rock', computerChoice);
-                break;
-            case 'paper':
-                result = playRound('paper', computerChoice);
-                break;
-            case 'scissors':
-                result = playRound('scissors', computerChoice);
-                break;
-        }
-    });
-}
-
-function getScore(result){
-    if (result == 'Win') {
-        humanScore += 1;
-    } else {
-        computerScore += 1;
+    switch (target.id) {
+        case 'rock':
+            playRound('rock', computerChoice);
+            break;
+        case 'paper':
+            playRound('paper', computerChoice);
+            break;
+        case 'scissors':
+            playRound('scissors', computerChoice);
+            break;
     }
-    return humanScore,computerScore
+});
+
+
+function getScore(result) {
+    if (result == 'win') {
+        humanScore += 1;
+        showScore(humanScore, computerScore);
+    } else if (result == 'lose') {
+        computerScore += 1;
+        showScore(humanScore, computerScore);
+    } else {
+        showScore(humanScore, computerScore);
+    }
 }
 
-function showScore(humanScore,computerScore){
-    
+function showScore(humanScore, computerScore) {
+    let score = document.querySelector("#show-score");
+    score.textContent = `${humanScore}    ${computerScore}`;
+    if (humanScore == 5) {
+        alert("You Are The Winner!!");
+
+    } else if (computerScore == 5) {
+        alert("Sorry, You lose!");
+    } 
 }
+
+showScore(humanScore, computerScore);
 
