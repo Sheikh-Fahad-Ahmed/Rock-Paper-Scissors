@@ -24,7 +24,7 @@ function playRound(humanChoice, computerChoice) {
             showMessage("You Win! Rock beats Scissors.");
             getScore('win');
         } else {
-            console.log("Its a Draw!");
+            showMessage("Its a Draw!");
         }
     } else if (humanChoice == 'paper') {
         if (computerChoice == 'rock') {
@@ -34,7 +34,7 @@ function playRound(humanChoice, computerChoice) {
             showMessage("You Lose! Scissors beat Paper.");
             getScore('lose');
         } else {
-            console.log("Its a Draw!");
+            showMessage("Its a Draw!");
         }
     } else {
         if (computerChoice == 'rock') {
@@ -43,6 +43,8 @@ function playRound(humanChoice, computerChoice) {
         } else if (computerChoice == 'paper') {
             showMessage("You win! Scissors beat Paper");
             getScore('win');
+        } else {
+            showMessage("Its a Draw!")
         }
     }
 }
