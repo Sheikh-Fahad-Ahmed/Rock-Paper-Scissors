@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -40,7 +41,7 @@ body {
 }
 
 button {
-    padding: 15px;
+    padding: 20px;
     min-height: 60px;
     min-width: 180px;
     color: #BFA181;
@@ -64,7 +65,7 @@ button {
 #score {
     font-size: 60px;
     color: #BFA181;
-    
+
 }
 
 #show-score {
@@ -91,4 +92,19 @@ button {
 .line {
     align-self: center;
     width: 600px;
+}
+
+.fa-hand-back-fist {
+    color: #BFA181;
+    font-size: 50px;
+}
+
+.fa-hand {
+    color: #BFA181;
+    font-size: 50px;
+}
+
+.fa-hand-scissors {
+    color: #BFA181;
+    font-size: 50px;
 }
