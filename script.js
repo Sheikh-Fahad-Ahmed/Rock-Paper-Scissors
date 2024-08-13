@@ -18,30 +18,30 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     if (humanChoice == 'rock') {
         if (computerChoice == 'paper') {
-            console.log("You lose! Paper beats Rock.");
+            showMessage("You lose! Paper beats Rock.");
             getScore('lose');
         } else if (computerChoice == 'scissors') {
-            console.log("You Win! Rock beats Scissors.");
+            showMessage("You Win! Rock beats Scissors.");
             getScore('win');
         } else {
             console.log("Its a Draw!");
         }
     } else if (humanChoice == 'paper') {
         if (computerChoice == 'rock') {
-            console.log("You Win! Paper Beats Rock.");
+            showMessage("You Win! Paper Beats Rock.");
             getScore('win');
         } else if (computerChoice == 'scissors') {
-            console.log("You Lose! Scissors beat Paper.");
+            showMessage("You Lose! Scissors beat Paper.");
             getScore('lose');
         } else {
             console.log("Its a Draw!");
         }
     } else {
         if (computerChoice == 'rock') {
-            console.log("You Lose! Rock beats scissors");
+            showMessage("You Lose! Rock beats scissors");
             getScore('lose');
         } else if (computerChoice == 'paper') {
-            console.log("You win! Scissors beat Paper");
+            showMessage("You win! Scissors beat Paper");
             getScore('win');
         }
     }
@@ -114,7 +114,18 @@ function showScore(humanScore, computerScore) {
 
     } else if (computerScore == 5) {
         alert("Sorry, You lose!");
-    } 
+    }
+}
+
+let div = document.querySelector(".moves");
+function showMessage(result) {
+    const msg = document.createElement("span");
+    const hr = document.createElement("hr");
+    msg.classList.add("message");
+    hr.classList.add("line");
+    msg.textContent = result;
+    div.appendChild(msg);
+    msg.appendChild(hr);
 }
 
 showScore(humanScore, computerScore);

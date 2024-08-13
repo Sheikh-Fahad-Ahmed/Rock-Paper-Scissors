@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Spectral:ital,wght@1,300&display=swap');
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -10,17 +11,16 @@ body {
     border-bottom: 2px solid #BFA181;
     margin: 0;
     padding: 15px;
-    
+
 }
 
 .heading {
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
     color: #EF3B33;
-    font-family: Merriweather;
-    font-size: 50px;
-    font-style: italic;
+    font-family: fantasy;
+    font-size: 40px;
 }
 
 .game {
@@ -28,13 +28,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:5rem;
+    gap: 5rem;
 }
 
 
 #buttons {
     display: flex;
-    gap:3rem;
+    gap: 3rem;
+    margin-bottom: 100px;
 }
 
 button {
@@ -49,13 +50,13 @@ button {
     box-shadow: 0px 0px 2px 2px #BFA181;
 }
 
-.player-score{
+.player-score {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
     padding: 20px;
-    gap:2rem
+    gap: 2rem
 }
 
 #score {
@@ -67,10 +68,23 @@ button {
 #show-score {
     color: #EF3B33;
     font-size: 50px;
-    
+}
+
+.moves {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+    max-height: 250px;
 
 }
 
+.message {
+    color: #BFA181;
+    font-size: 25px;
+}
 
-
-
+.line {
+    flex-basis: 600px;
+}
