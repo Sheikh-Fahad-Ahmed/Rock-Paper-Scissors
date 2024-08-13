@@ -108,7 +108,7 @@ function getScore(result) {
 
 function showScore(humanScore, computerScore) {
     let score = document.querySelector("#show-score");
-    score.textContent = `${humanScore}    ${computerScore}`;
+    score.textContent = `${humanScore}  -  ${computerScore}`;
     if (humanScore == 5) {
         alert("You Are The Winner!!");
 
